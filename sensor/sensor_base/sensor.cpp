@@ -9,4 +9,5 @@ Sensor::Sensor(const std::string& name){
 Sensor::~Sensor(){
 }
 
-};// end namespace
+}// end namespace
+

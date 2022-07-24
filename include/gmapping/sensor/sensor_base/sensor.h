@@ -19,7 +19,7 @@ class SENSOR_BASE_EXPORT Sensor{
 
 typedef std::map<std::string, Sensor*> SensorMap;
 
-}; //end namespace
+} //end namespace
 
 #endif
 

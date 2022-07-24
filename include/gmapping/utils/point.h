@@ -143,7 +143,7 @@ struct pointradialcomparator{
 };
 
 template <class T>
-inline point<T> max(const point<T>& p1, const point<T>& p2){
+inline point<T> (max)(const point<T>& p1, const point<T>& p2){
 	point<T> p=p1;
 	p.x=p.x>p2.x?p.x:p2.x;
 	p.y=p.y>p2.y?p.y:p2.y;
@@ -151,7 +151,7 @@ inline point<T> max(const point<T>& p1, const point<T>& p2){
 }
 
 template <class T>
-inline point<T> min(const point<T>& p1, const point<T>& p2){
+inline point<T> (min)(const point<T>& p1, const point<T>& p2){
 	point<T> p=p1;
 	p.x=p.x<p2.x?p.x:p2.x;
 	p.y=p.y<p2.y?p.y:p2.y;

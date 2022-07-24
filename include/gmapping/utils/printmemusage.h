@@ -1,9 +1,14 @@
 #ifndef PRINTMEMUSAGE_H
 #define PRINTMEMUSAGE_H
-#include <sys/types.h>
+
 #ifndef _WIN32
-  #include <unistd.h>
+	#include <sys/types.h>
+	#include <unistd.h>
+#else
+	#include "process.h"
+	typedef int pid_t;
 #endif
+
 #include <iostream>
 #include <fstream>
 #include <string>

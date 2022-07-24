@@ -4,9 +4,16 @@ namespace GMapping{
 
 using namespace std;
 void printmemusage(){
-	pid_t pid=getpid();
 	char procfilename[1000];
+
+#ifndef _WIN32
+	pid_t pid = getpid();
 	sprintf(procfilename, "/proc/%d/status", pid);
+#else
+	pid_t pid = _getpid();
+	sprintf_s(procfilename, "/proc/%d/status", pid);
+#endif
+
 	ifstream is(procfilename);
 	string line;
 	while (is){
