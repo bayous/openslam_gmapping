@@ -1,0 +1,42 @@
+
+#ifndef GRIDFASTSLAM_EXPORT_H
+#define GRIDFASTSLAM_EXPORT_H
+
+#ifdef GRIDFASTSLAM_STATIC_DEFINE
+#  define GRIDFASTSLAM_EXPORT
+#  define GRIDFASTSLAM_NO_EXPORT
+#else
+#  ifndef GRIDFASTSLAM_EXPORT
+#    ifdef gridfastslam_EXPORTS
+        /* We are building this library */
+#      define GRIDFASTSLAM_EXPORT 
+#    else
+        /* We are using this library */
+#      define GRIDFASTSLAM_EXPORT 
+#    endif
+#  endif
+
+#  ifndef GRIDFASTSLAM_NO_EXPORT
+#    define GRIDFASTSLAM_NO_EXPORT 
+#  endif
+#endif
+
+#ifndef GRIDFASTSLAM_DEPRECATED
+#  define GRIDFASTSLAM_DEPRECATED __declspec(deprecated)
+#endif
+
+#ifndef GRIDFASTSLAM_DEPRECATED_EXPORT
+#  define GRIDFASTSLAM_DEPRECATED_EXPORT GRIDFASTSLAM_EXPORT GRIDFASTSLAM_DEPRECATED
+#endif
+
+#ifndef GRIDFASTSLAM_DEPRECATED_NO_EXPORT
+#  define GRIDFASTSLAM_DEPRECATED_NO_EXPORT GRIDFASTSLAM_NO_EXPORT GRIDFASTSLAM_DEPRECATED
+#endif
+
+#if 0 /* DEFINE_NO_DEPRECATED */
+#  ifndef GRIDFASTSLAM_NO_DEPRECATED
+#    define GRIDFASTSLAM_NO_DEPRECATED
+#  endif
+#endif
+
+#endif /* GRIDFASTSLAM_EXPORT_H */

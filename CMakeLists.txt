@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 2.8.3)
 project(openslam_gmapping)
 
 ## Find catkin macros and libraries
-find_package(catkin REQUIRED)
+##find_package(catkin REQUIRED)
 
 include(GenerateExportHeader)
-set(EXPORT_HEADER_DIR "${CATKIN_DEVEL_PREFIX}/include")
+set(EXPORT_HEADER_DIR "C:/dev/bayous/gmappingAdapter/gmapppingAdapter/modules/openslam_gmapping/exported_include")
 file(MAKE_DIRECTORY "${EXPORT_HEADER_DIR}")
 
 ###################################
@@ -13,12 +13,12 @@ file(MAKE_DIRECTORY "${EXPORT_HEADER_DIR}")
 ###################################
 ## The catkin_package macro generates cmake config files for your package
 ## Declare things to be passed to dependent projects
-catkin_package(
-  INCLUDE_DIRS
-    include
-    ${EXPORT_HEADER_DIR}
-  LIBRARIES utils sensor_base sensor_odometry sensor_range log configfile scanmatcher gridfastslam
-)
+##catkin_package(
+##  INCLUDE_DIRS
+##    include
+##    ${EXPORT_HEADER_DIR}
+##  LIBRARIES utils sensor_base sensor_odometry sensor_range log configfile scanmatcher gridfastslam
+##)
 
 ###########
 ## Build ##
@@ -172,11 +172,11 @@ install(TARGETS autoptr_test log_test log_plot scanstudio2carmen rdk2carmen conf
 )
 
 ## Mark cpp header files for installation
-install(DIRECTORY include/gmapping
-  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h*"
-  PATTERN ".svn" EXCLUDE
-)
+##install(DIRECTORY include/gmapping
+##  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
+##  FILES_MATCHING PATTERN "*.h*"
+##  PATTERN ".svn" EXCLUDE
+##)
 
 generate_export_header(utils
   EXPORT_FILE_NAME ${EXPORT_HEADER_DIR}/gmapping/utils/utils_export.h)
@@ -195,9 +195,9 @@ generate_export_header(scanmatcher
 generate_export_header(gridfastslam
   EXPORT_FILE_NAME ${EXPORT_HEADER_DIR}/gmapping/gridfastslam/gridfastslam_export.h)
 
-install(DIRECTORY
-  ${EXPORT_HEADER_DIR}/
-  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION})
+##install(DIRECTORY
+##  ${EXPORT_HEADER_DIR}/
+##  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION})
 
 #############
 ## Testing ##
